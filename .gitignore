@@ -285,6 +285,9 @@ FakesAssemblies/
 .ntvs_analysis.dat
 node_modules/
 
+# Local API configuration and secrets
+webapi/appsettings.json
+
 # Visual Studio 6 build log
 *.plg
 

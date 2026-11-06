@@ -6,7 +6,7 @@ La solución está separada como en LMS: `Domain/Entities` y `Domain/Requests`; 
 
 ## Preparación
 
-1. Ajusta `ConnectionStrings:WmsResMondelez` en `webapi/appsettings.json` para tu SQL Server. La base inicial es `WMSResMondelez`.
+1. Copia `webapi/appsettings.example.json` como `webapi/appsettings.json` y ajusta `ConnectionStrings:PrbBgSql` para tu SQL Server local. Ese archivo local no se sube a Git.
 2. Ejecuta `database/WMSResMondelez_Inventory.sql` y luego `database/WMSResMondelez_Inventory_StoredProcedures.sql` en esa base.
 3. Cambia `Jwt:Key` antes de publicar.
 4. Ejecuta `dotnet restore` y `dotnet run --project webapi/webapi.csproj`.
