@@ -1,4 +1,4 @@
-USE [WMSResMondelez];
+USE [prb_BG_SQL];
 GO
 
 CREATE OR ALTER PROCEDURE dbo.csp_Inventory_User_Get
