@@ -7,11 +7,13 @@ using Serilog;
 using Service;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.Json.Serialization;
 using webapi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseSerilog((context, services, config) => config.ReadFrom.Configuration(context.Configuration).ReadFrom.Services(services));
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(options =>
+    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 builder.Services.AddDbContext<InventoryDbContext>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("WmsResMondelez")));
 builder.Services.AddScoped<IInventoryRepository, InventoryRepository>();
 builder.Services.AddScoped<IAuthBusiness, AuthBusiness>();
